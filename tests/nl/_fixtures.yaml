@@ -170,8 +170,14 @@ entities:
   - name: "Feestmodus"
     id: "scene.party_mode"
 
+  - name: "Televisie kijken"
+    id: "scene.watch_tv"
+
   - name: "Stealthmodus"
     id: "script.stealth_mode"
+
+  - name: "Slapen"
+    id: "script.sleep"
 
   - name: "Voordeur"
     id: "lock.front_door"

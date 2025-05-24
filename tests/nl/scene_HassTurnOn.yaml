@@ -1,17 +1,64 @@
 language: nl
 tests:
   - sentences:
-      - "Zet feestmodus aan"
-      - "Activeer feestmodus"
-      - "Start feestmodus"
-      - "Feestmodus aan"
-      - "wil je feestmodus aan zetten"
-      - "feestmodusscène activeren"
-      - "scene feestmodus aan zetten"
-      - "kun je feestmodus aanzetten"
+      - "feestmodus"
+      - "feestmodus scene"
+      - "feestmodus aan"
+      - "feestmodus scene aan"
+      - "schakel feestmodus in"
+      - "schakel de feestmodus in"
+      - "doe feestmodus aan"
+      - "activeer feestmodus"
     intent:
       name: HassTurnOn
       slots:
         domain: scene
         name: "Feestmodus"
+    response: "Geactiveerd"
+
+  - sentences:
+      - "ik ga televisie kijken"
+      - "ik wil televisie kijken"
+      - "wij gaan televisie kijken"
+      - "we gaan televisie kijken"
+      - "wij willen televisie kijken"
+      - "we willen televisie kijken"
+    intent:
+      name: HassTurnOn
+      slots:
+        domain: scene
+        name: "Televisie kijken"
+    response: "Geactiveerd"
+
+  - sentences:
+      - "feestmodus scene in de keuken"
+      - "feestmodus aan in de keuken"
+      - "feestmodus scene aan in de keuken"
+      - "schakel feestmodus in de keuken in"
+      - "schakel in de keuken feestmodus in"
+      - "schakel in de keuken de feestmodus in"
+      - "schakel de feestmodus in de keuken in"
+      - "doe feestmodus in de keuken aan"
+      - "activeer keuken feestmodus"
+    intent:
+      name: HassTurnOn
+      slots:
+        area: Keuken
+        domain: scene
+        name: "Feestmodus"
+    response: "Geactiveerd"
+
+  - sentences:
+      - "ik ga televisie kijken in de woonkamer"
+      - "ik ga in de woonkamer televisie kijken"
+      - "ik wil televisie kijken in de woonkamer"
+      - "wij gaan televisie kijken in de woonkamer"
+      - "we gaan in de woonkamer televisie kijken"
+      - "wij willen televisie kijken in de woonkamer"
+    intent:
+      name: HassTurnOn
+      slots:
+        area: Woonkamer
+        domain: scene
+        name: "Televisie kijken"
     response: "Geactiveerd"

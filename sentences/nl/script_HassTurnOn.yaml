@@ -2,10 +2,28 @@ language: nl
 intents:
   HassTurnOn:
     data:
+      # sentences without area
       - sentences:
-          - "(activeer|start|schakel) ([script] <name>|<name>[ ][script]) [<to>] [in]"
-          - "[<change>] ([script] <name>|<name>[ ][script]) [<to>] (aan|in)"
-          - "[<would>] ([script] <name>|<name>[ ][script]) [<to>] (aan[ ](zetten|doen)|inschakelen|starten|activeren)"
+          # sentences for script named after a state (e.g. party mode)
+          - "[schakel|doe|activeer] <name> [script] [in|aan]"
+          # sentences for script named after an activity you want to undertake (e.g. sleep)
+          - "[ik ga|ik wil|we gaan|wij gaan|we willen|wij willen] <name>"
+        requires_context:
+          domain: script
+        slots:
+          domain: script
+        response: script
+      # sentences with area
+      - sentences:
+          # sentences for script named after a state (e.g. party mode)
+          - "<name> [script] [aan] [<in>] <area>"
+          - "[doe|schakel] <name> [script] [<in>] <area> [aan|in]"
+          - "[doe|schakel] <name> [script] [aan|in] [<in>] <area>"
+          - "[doe|schakel] [<in>] <area> <name> [script] [aan|in]"
+          - "activeer <name> [script] [<in>] <area>"
+          - "activeer <area> <name> [script]"
+          # sentences for script named after an activity you want to undertake (e.g. sleep)
+          - "[ik ga|ik wil|we gaan|wij gaan|we willen|wij willen] (<name>;[<in>] <area>)"
         requires_context:
           domain: script
         slots:

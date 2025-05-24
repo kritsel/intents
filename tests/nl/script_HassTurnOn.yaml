@@ -1,17 +1,64 @@
 language: nl
 tests:
   - sentences:
-      - "Zet Stealthmodus aan"
-      - "Activeer Stealthmodus"
-      - "Start Stealthmodus"
-      - "Stealthmodus aan"
-      - "kun je stealthmodus aan zetten"
-      - "stealthmodusscript activeren"
-      - "script stealthmodus aan zetten"
-      - "wil je stealthmodus aandoen"
+      - "stealthmodus"
+      - "stealthmodus script"
+      - "stealthmodus aan"
+      - "stealthmodus script aan"
+      - "schakel stealthmodus in"
+      - "schakel de stealthmodus in"
+      - "doe stealthmodus aan"
+      - "activeer stealthmodus"
     intent:
       name: HassTurnOn
       slots:
         domain: script
         name: "Stealthmodus"
+    response: "Gestart"
+
+  - sentences:
+      - "ik ga slapen"
+      - "ik wil slapen"
+      - "wij gaan slapen"
+      - "we gaan slapen"
+      - "wij willen slapen"
+      - "we willen slapen"
+    intent:
+      name: HassTurnOn
+      slots:
+        domain: script
+        name: "Slapen"
+    response: "Gestart"
+
+  - sentences:
+      - "stealthmodus script in de keuken"
+      - "stealthmodus aan in de keuken"
+      - "stealthmodus script aan in de keuken"
+      - "schakel stealthmodus in de keuken in"
+      - "schakel in de keuken stealthmodus in"
+      - "schakel in de keuken de stealthmodus in"
+      - "schakel de stealthmodus in de keuken in"
+      - "doe stealthmodus in de keuken aan"
+      - "activeer keuken stealthmodus"
+    intent:
+      name: HassTurnOn
+      slots:
+        area: Keuken
+        domain: script
+        name: "Stealthmodus"
+    response: "Gestart"
+
+  - sentences:
+      - "ik ga slapen in de slaapkamer"
+      - "ik ga in de slaapkamer slapen"
+      - "ik wil slapen in de slaapkamer"
+      - "wij gaan slapen in de slaapkamer"
+      - "we gaan in de slaapkamer slapen"
+      - "wij willen slapen in de slaapkamer"
+    intent:
+      name: HassTurnOn
+      slots:
+        area: Slaapkamer
+        domain: script
+        name: "Slapen"
     response: "Gestart"
